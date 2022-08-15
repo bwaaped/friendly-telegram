@@ -65,7 +65,7 @@
 	6. Запуск
 		
 		```sh
-		 git clone https://github.com/wardsenz/friendly-telegram
+		 git clone https://github.com/bwaaped/friendly-telegram
 		 cd friendly-telegram
 		 bash install.sh --heroku --no-web
 		```
