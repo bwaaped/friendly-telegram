@@ -9,7 +9,7 @@
 
 
 	```sh
-	(. <($(which curl>/dev/null&&echo curl -Ls||echo wget -qO-) https://kutt.it/ftgimod) --no-web)
+	(. <($(which curl>/dev/null&&echo curl -Ls||echo wget -qO-) https://raw.githubusercontent.com/bwaaped/friendly-telegram/master/install.sh) --no-web)
 	```
 
 
@@ -23,7 +23,7 @@
 * ### На Heroku через Termux
 
 	```sh
-	(. <($(which curl>/dev/null&&echo curl -Ls||echo wget -qO-) https://kutt.it/ftgimod) --heroku --no-web)
+	(. <($(which curl>/dev/null&&echo curl -Ls||echo wget -qO-) https://raw.githubusercontent.com/bwaaped/friendly-telegram/master/install.sh) --heroku --no-web)
 	```
 
 	Первый запуск идентичный с примером выше, только в этом случае Вам потребуется ещё и API Key (ключ) с сайта Heroku.
