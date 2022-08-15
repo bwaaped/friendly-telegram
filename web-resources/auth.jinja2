@@ -24,15 +24,15 @@
 {% endblock %}
 
 {% block title %}
-Вход
+Authentication
 {% endblock %}
 
 {% block content %}
 <div class="mdl-card__title">
-  <h3 class="mdl-card__title-text">Вход</h3>
+  <h3 class="mdl-card__title-text">Sign In</h3>
 </div>
 <div class="mdl-card__supporting-text">
-  Пожалуйста, выберите ID пользователя, в которого вы хотите войти
+  Please select the Telegram User ID to which you want to sign in
   <ul class="mdl-list">
     {% for uid in users %}
       <li class="mdl-list__item">
@@ -47,20 +47,20 @@
 
 {% block after %}
 <dialog class="mdl-dialog" id="codeentry">
-  <h4 class="mdl-dialog__title">Введите Код</h4>
+  <h4 class="mdl-dialog__title">Enter Code</h4>
   <div class="mdl-dialog__content">
     <p>
-      Пожалуйста введите код, отправленный на ваш Телеграм аккаунт
+      Please enter the code sent to your <a id="savedmsgslink">Saved Messages</a> in Telegram
     </p>
 
     <div class="mdl-textfield mdl-js-textfield">
       <input class="mdl-textfield__input" type="password" pattern="[0-9]{5}" id="code" oninput="codeChanged(this);">
-      <label class="mdl-textfield__label" for="code">Код</label>
-      <span class="mdl-textfield__error" id="codeerror">Код должен состоять из 5 цифр</span>
+      <label class="mdl-textfield__label" for="code">Code</label>
+      <span class="mdl-textfield__error" id="codeerror">Code must be 5 numerical digits</span>
     </div>
   </div>
   <div class="mdl-dialog__actions">
-    <button class="mdl-button" onclick="cancelCodeInput();">Отмена</button>
+    <button class="mdl-button" onclick="cancelCodeInput();">Cancel</button>
   </div>
 </dialog>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/dialog-polyfill/0.5.0/dialog-polyfill.min.js"></script>
