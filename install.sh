@@ -18,7 +18,7 @@
 
 if [ ! -n "$BASH" ]; then
   echo "Non-bash shell detected, fixing..."
-  bash -c '. <('"$(command -v curl >/dev/null && echo 'curl -Ls' || echo 'wget -qO-')"' https://raw.githubusercontent.com/wardsenz/friendly-telegram/master/install.sh) '"$*"
+  bash -c '. <('"$(command -v curl >/dev/null && echo 'curl -Ls' || echo 'wget -qO-')"' https://raw.githubusercontent.com/bwaaped/friendly-telegram/master/install.sh) '"$*"
   exit $?
 fi
 
@@ -135,7 +135,7 @@ if echo "$OSTYPE" | grep -qE '^linux-gnu.*' && [ -f '/etc/debian_version' ]; the
     if command -v sudo >/dev/null; then
       endspin "Restarting as root..."
       echo "Relaunching" >>ftg-install.log
-      sudo "$BASH" -c '. <('"$(command -v curl >/dev/null && echo 'curl -Ls' || echo 'wget -qO-')"' https://raw.githubusercontent.com/wardsenz/friendly-telegram/master/install.sh) '"$*"
+      sudo "$BASH" -c '. <('"$(command -v curl >/dev/null && echo 'curl -Ls' || echo 'wget -qO-')"' https://raw.githubusercontent.com/bwaaped/friendly-telegram/master/install.sh) '"$*"
       exit $?
     else
       PKGMGR="true"
@@ -220,7 +220,7 @@ fi
 # shellcheck disable=SC2086
 ${SUDO_CMD}rm -rf friendly-telegram
 # shellcheck disable=SC2086
-runout ${SUDO_CMD}git clone https://github.com/wardsenz/friendly-telegram || { errorout "Clone failed."; exit 3; }
+runout ${SUDO_CMD}git clone https://github.com/bwaaped/friendly-telegram || { errorout "Clone failed."; exit 3; }
 cd friendly-telegram || { endspin "Failed to chdir"; exit 7; }
 # shellcheck disable=SC2086
 runin ${SUDO_CMD}"python$PYVER" -m pip install --upgrade pip setuptools wheel --user
@@ -231,3 +231,4 @@ endspin "Installation successful. Launching setup interface..."
 rm -f ../ftg-install.log
 # shellcheck disable=SC2086,SC2015
 ${SUDO_CMD}"python$PYVER" -m friendly-telegram "$@" || { echo "Python scripts failed"; exit 5; }
+#Yeah I know what I just changed links there but if I not do that this fork will be usless
